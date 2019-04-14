@@ -81,18 +81,28 @@
   #define Z_CS_PIN         P1_10
 #endif
 
-#define E0_STEP_PIN        P2_13
-#define E0_DIR_PIN         P0_11
-#define E0_ENABLE_PIN      P2_12
+// E0 defined with unused Pin 0.26, will not be used
+#define E0_STEP_PIN        P0_26
+#define E0_DIR_PIN         P0_26
+#define E0_ENABLE_PIN      P0_26
 #ifndef E0_CS_PIN
-  #define E0_CS_PIN        P1_08
+  #define E0_CS_PIN        P0_26
 #endif
 
-#define E1_STEP_PIN        P0_01
-#define E1_DIR_PIN         P0_00
-#define E1_ENABLE_PIN      P0_10
+// E1 defined with Pins of E0, for use as X2
+#define E1_STEP_PIN        P2_13
+#define E1_DIR_PIN         P0_11
+#define E1_ENABLE_PIN      P2_12
 #ifndef E1_CS_PIN
-  #define E1_CS_PIN        P1_01
+  #define E1_CS_PIN        P1_08
+#endif
+
+// E2 defined with Pins of E1, for use as Y2
+#define E2_STEP_PIN        P0_01
+#define E2_DIR_PIN         P0_00
+#define E2_ENABLE_PIN      P0_10
+#ifndef E2_CS_PIN
+  #define E2_CS_PIN        P1_01
 #endif
 
 //
@@ -215,8 +225,8 @@
 //#define USB_SD_DISABLED
 #define USB_SD_ONBOARD        // Provide the onboard SD card to the host as a USB mass storage device
 
-#define LPC_SD_LCD            // Marlin uses the SD drive attached to the LCD
-//#define LPC_SD_ONBOARD        // Marlin uses the SD drive on the control board
+//#define LPC_SD_LCD            // Marlin uses the SD drive attached to the LCD
+#define LPC_SD_ONBOARD        // Marlin uses the SD drive on the control board
 
 #if ENABLED(LPC_SD_LCD)
 
