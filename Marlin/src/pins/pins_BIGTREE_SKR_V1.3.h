@@ -275,7 +275,11 @@
 
 #if !ANY(LPC_SD_LCD, LPC_SD_ONBOARD, LPC_SD_CUSTOM_CABLE)
   #undef USB_SD_DISABLED
+<<<<<<< HEAD
   //#define USB_SD_ONBOARD
+=======
+  #define USB_SD_ONBOARD
+>>>>>>> 142c8e2fed810c785fce1afadd0949025f178ad7
   #define LPC_SD_LCD
 #endif
 
